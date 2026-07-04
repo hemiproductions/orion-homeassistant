@@ -1,6 +1,6 @@
 """Constants for the Orion integration."""
 
-DOMAIN = "orion"
+DOMAIN = "orion_media_tracker"
 
 CONF_URL = "url"
 CONF_TOKEN = "token"

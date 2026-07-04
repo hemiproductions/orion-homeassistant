@@ -21,7 +21,7 @@ class OrionCoordinator(DataUpdateCoordinator[dict[str, Any]]):
         super().__init__(
             hass,
             _LOGGER,
-            name="orion",
+            name="orion_media_tracker",
             update_interval=timedelta(minutes=scan_interval_minutes),
         )
         self.client = client

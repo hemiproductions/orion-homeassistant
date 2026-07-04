@@ -1,4 +1,4 @@
-# Orion for Home Assistant
+# Orion Media Tracker for Home Assistant
 
 A native [Home Assistant](https://www.home-assistant.io/) integration for
 Orion, the TV/movie/game tracker. Installable via [HACS](https://hacs.xyz/) —
@@ -16,8 +16,8 @@ Talks to your Orion instance's token-authed `/api/machine/*` HTTP API
   - `sensor.orion_releasing_soon` — followed items releasing today/tomorrow
 - **`button.orion_sync`** — trigger an immediate catalog refresh + notification check
 - **Services** — write back to Orion from automations or scripts:
-  - `orion.mark_watched` — mark an episode/movie/game watched or unwatched
-  - `orion.set_followed` — follow/unfollow a show/movie/game, archive/unarchive a show
+  - `orion_media_tracker.mark_watched` — mark an episode/movie/game watched or unwatched
+  - `orion_media_tracker.set_followed` — follow/unfollow a show/movie/game, archive/unarchive a show
 
 ## Installation
 
@@ -25,14 +25,14 @@ Talks to your Orion instance's token-authed `/api/machine/*` HTTP API
 
 1. HACS → Integrations → ⋮ → Custom repositories → add
    `https://github.com/hemiproductions/orion-homeassistant` as an **Integration**.
-2. Install "Orion", restart Home Assistant.
-3. **Settings → Devices & Services → Add Integration → Orion.**
+2. Install "Orion Media Tracker", restart Home Assistant.
+3. **Settings → Devices & Services → Add Integration → Orion Media Tracker.**
 4. Enter your Orion instance URL (e.g. `https://orionmedia.app` or
    `http://dev.orionmedia.app`) and the API token shown on Orion's Settings page.
 
 ### Manual
 
-Copy `custom_components/orion` into your Home Assistant config's
+Copy `custom_components/orion_media_tracker` into your Home Assistant config's
 `custom_components/` directory and restart.
 
 ## Configuration
@@ -43,6 +43,11 @@ All setup happens through the config flow UI (URL + token). Polling interval
 
 ## Notes
 
+- The integration's domain is `orion_media_tracker` (not `orion` — that name was
+  already claimed by an unrelated project in Home Assistant's shared brands
+  registry). If you installed a pre-0.2.0 version, remove the old "Orion"
+  integration entry and delete `custom_components/orion` before updating, then
+  re-add it as "Orion Media Tracker".
 - Requires Orion's `/api/machine/summary`, `/api/machine/watched`,
   `/api/machine/follow`, and `/api/machine/sync` endpoints (added alongside
   this integration — update Orion if those 404).
