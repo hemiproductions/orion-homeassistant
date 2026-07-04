@@ -1,0 +1,63 @@
+mark_watched:
+  name: Mark watched
+  description: Mark an Orion episode, movie, or game as watched/played (or unwatched).
+  fields:
+    kind:
+      name: Kind
+      description: The type of item.
+      required: true
+      selector:
+        select:
+          options:
+            - episode
+            - movie
+            - game
+    id:
+      name: Item ID
+      description: The Orion catalog ID (not the TMDB/IGDB ID) of the item.
+      required: true
+      selector:
+        number:
+          min: 1
+          mode: box
+    watched:
+      name: Watched
+      description: True to mark watched/played, false to mark unwatched.
+      required: true
+      selector:
+        boolean:
+
+set_followed:
+  name: Set followed
+  description: Follow/unfollow a show, movie, or game, or archive/unarchive a show.
+  fields:
+    kind:
+      name: Kind
+      description: The type of item.
+      required: true
+      selector:
+        select:
+          options:
+            - show
+            - movie
+            - game
+    id:
+      name: Item ID
+      description: The Orion catalog ID of the item.
+      required: true
+      selector:
+        number:
+          min: 1
+          mode: box
+    followed:
+      name: Followed
+      description: True to follow, false to unfollow.
+      required: false
+      selector:
+        boolean:
+    archived:
+      name: Archived
+      description: True to archive, false to unarchive (shows only).
+      required: false
+      selector:
+        boolean:

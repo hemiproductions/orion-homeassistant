@@ -1,0 +1,32 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connect to Orion",
+        "description": "Enter your Orion instance URL and the API token from its Settings page.",
+        "data": {
+          "url": "Orion URL",
+          "token": "API token"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "The API token was rejected.",
+      "cannot_connect": "Could not connect to Orion at that URL.",
+      "invalid_url": "That doesn't look like a valid URL."
+    },
+    "abort": {
+      "already_configured": "This Orion instance is already configured."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Orion options",
+        "data": {
+          "scan_interval": "Polling interval (minutes)"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "domain": "orion",
+  "name": "Orion",
+  "codeowners": ["@hemiproductions"],
+  "config_flow": true,
+  "documentation": "https://github.com/hemiproductions/orion-homeassistant",
+  "issue_tracker": "https://github.com/hemiproductions/orion-homeassistant/issues",
+  "iot_class": "local_polling",
+  "requirements": [],
+  "version": "0.1.0"
+}
